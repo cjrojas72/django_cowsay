@@ -10,16 +10,12 @@
     <p>
       Welcome to the cowsay site. Type anything you want in the text box and a
       cow will say it
-      <form action="/" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Submit!">
-      </form>
-      <ul>
-        {% for item in data %}
-          <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
     </p>
+    <form action="/" method="POST">
+      {% csrf_token %} {{ form.as_p }}
+      <input type="submit" value="Submit!" />
+    </form>
+    {{ cowsays }}
+    <p>see history <a href="/history/">here</a></p>
   </body>
 </html>
